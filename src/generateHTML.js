@@ -21,16 +21,16 @@ function generateEmployeeCards(employees) {
 function generateManagerCard(manager) {
   return ` <div class="col-4 mt-4">
     <div class="card" id="manager-card" style="width: 18rem">
-        <div class="header-style text-center">
-            <h5>${manager.name}</h5>
+        <div class="header-style bg-primary text-light">
+            <h5 class="p-2">${manager.name}</h5 class="p-2">
             <span class="material-icons">person_outline </span>Manager
         </div>
         <ul class="list-group list-group-flush px-2">
-            <li class="list-group-item px-2 m-2 border">Id: ${manager.id}</li>
-            <li class="list-group-item px-2 m-2 border">
+            <li class="list-group-item px-2 border">Id: ${manager.id}</li>
+            <li class="list-group-item px-2 border">
                 Email: <a href="mailto:${manager.email}">${manager.email}</a>
             </li>
-            <li class="list-group-item px-2 m-2 border">
+            <li class="list-group-item px-2 border">
                 Office Number: ${manager.officeNumber}
             </li>
         </ul>
@@ -41,16 +41,16 @@ function generateManagerCard(manager) {
 function generateEngineerCard(engineer) {
   return `<div class="col-4 mt-4">
     <div class="card" id="engineer-card" style="width: 18rem">
-        <div class="header-style text-center">
-            <h5>${engineer.name}</h5>
+        <div class="header-style bg-primary text-light">
+            <h5 class="p-2">${engineer.name}</h5 class="p-2">
             <span class="material-icons">engineering</span> Engineer
         </div>
         <ul class="list-group list-group-flush px-2">
-            <li class="list-group-item px-2 m-2 border">Id: ${engineer.id}</li>
-            <li class="list-group-item px-2 m-2 border">
+            <li class="list-group-item px-2 border">Id: ${engineer.id}</li>
+            <li class="list-group-item px-2 border">
                 Email: <a href="mailto:${engineer.email}">${engineer.email}</a>
             </li>
-            <li class="list-group-item px-2 m-2 border">
+            <li class="list-group-item px-2 border">
                 GitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a>
             </li>
         </ul>
@@ -61,16 +61,16 @@ function generateEngineerCard(engineer) {
 function generateInternCard(intern) {
   return `<div class="col-4 mt-4">
     <div class="card" id="intern-card" style="width: 18rem">
-        <div class="header-style text-center">
-            <h5>${intern.getName()}</h5>
+        <div class="header-style bg-primary text-light">
+            <h5 class="p-2">${intern.getName()}</h5 class="p-2">
             <span class="material-icons">school</span> Intern
         </div>
         <ul class="list-group list-group-flush px-2">
-            <li class="list-group-item px-2 m-2 border">Id: ${intern.id}</li>
-            <li class="list-group-item px-2 m-2 border">
+            <li class="list-group-item px-2 border">Id: ${intern.id}</li>
+            <li class="list-group-item px-2 border">
                 Email: <a href="mailto:${intern.email}">${intern.email}</a>
             </li>
-            <li class="list-group-item px-2 m-2 border">School: ${intern.school}</li>
+            <li class="list-group-item px-2  border">School: ${intern.school}</li>
         </ul>
     </div>
 </div>`;
@@ -90,14 +90,13 @@ const generateHTML = (data) => {
       </head>
       
       <body>
-          <nav class="nav-style">
-              <h1>Team Profile</h1>
-              <span class="material-icons"> groups </span>
-          </nav>
+          <header class="bg-danger text-center">
+              <h1 class="text-light p-4">My Team</h1>
+          </header>
           <div class="container">
               <div class="row mt-4 mb-4 justify-content-center">
               <!--Employee Cards-->
-              
+              ${generateEmployeeCards(data)}
               </div>
           </div>
       </body>
